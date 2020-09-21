@@ -1,0 +1,24 @@
+import random 
+
+random_number = list(str(random.randint(1000,10000)))
+print(random_number)
+
+guessed = False 
+
+while guessed == False: 
+    guess = list(input("type a 4 digit number"))
+    cow = 0
+    bull = 0
+
+    for i in range(4):
+        if guess[i] == random_number[i]:
+            cow += 1 
+        elif guess[i] in random_number:
+            bull += 1 
+        print("you have",cow,"cows and",bull,"bulls") 
+        
+    
+    
+    if cow == 4:
+        guessed = True
+        print("you won")
